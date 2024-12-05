@@ -6,24 +6,11 @@ import { I18nextProvider, initReactI18next } from 'react-i18next';
 import filter from 'leo-profanity';
 import io from 'socket.io-client';
 import resources from './locales/index.js';
-import { ApiContext } from './contexts';
-import store from './slices';
-import App from './components/App';
+import { ApiContext } from './contexts/index.jsx';
+import store from './slices/index.jsx';
+import App from './components/App.jsx';
 
 const i18n = i18next.createInstance();
-
-await i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'ru',
-    fallbackLng: 'ru',
-    debug: true,
-
-    interpolation: {
-      escapeValue: false,
-    },
-  });
 
 const rollbarConfig = {
   accessToken: process.env.REACT_APP_ROLLBAR_ACCESS_TOKEN,
@@ -43,16 +30,30 @@ const socketApi = {
   },
 };
 
-const init = async () => (
-  <RollbarProvider config={rollbarConfig}>
-    <I18nextProvider i18n={i18n}>
-      <ApiContext.Provider value={socketApi}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </ApiContext.Provider>
-    </I18nextProvider>
-  </RollbarProvider>
-);
+const init = async () => {
+  await i18n
+    .use(initReactI18next)
+    .init({
+      resources,
+      lng: 'ru',
+      fallbackLng: 'ru',
+      debug: true,
+
+      interpolation: {
+        escapeValue: false,
+      },
+    });
+  return (
+    <RollbarProvider config={rollbarConfig}>
+      <I18nextProvider i18n={i18n}>
+        <ApiContext.Provider value={socketApi}>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </ApiContext.Provider>
+      </I18nextProvider>
+    </RollbarProvider>
+  );
+};
 
 export default init;
