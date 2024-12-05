@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,9 +9,9 @@ const app = async () => {
   const vdom = await init();
 
   root.render(
-    <React.StrictMode>
+    <StrictMode>
       {vdom}
-    </React.StrictMode>,
+    </StrictMode>,
   );
 };
 
