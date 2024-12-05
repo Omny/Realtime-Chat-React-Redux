@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Realtime Chat on React/Redux, using AJAX, REST, websockets, React Hooks and Redux",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
     "start": "start-server -s ./frontend/build",
