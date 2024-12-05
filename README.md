@@ -6,11 +6,14 @@
 
 A real-time Slack like chat application.
 
-In this project I improved my skills with React (with hooks), Redux (@reduxjs/toolkit), AJAX, REST API, WebSocket's, i18next, Rollbar.
+In this project I improved my skills with React (with hooks), Redux (@reduxjs/toolkit), AJAX, REST API, WebSocket's, i18next, Rollbar, Vite.
 
 ## Deployed app link
 
-https://frontend-project-12-chi.vercel.app/
+https://realtime-chat-react-redux.onrender.com
+
+login: admin
+password: admin
 
 ## Requirements
 
@@ -25,4 +28,4 @@ make install
 ```bash
 make start
 ```
-On *localhost:3000*
+On *localhost:5001*
