@@ -26,7 +26,6 @@
     "react-toastify": "^9.0.1",
     "rollbar": "^2.25.0",
     "sass": "^1.52.1",
-    "socket.io": "^4.5.1",
     "socket.io-client": "^4.5.1",
     "vite": "^5.4.8",
     "yup": "^0.32.11"
